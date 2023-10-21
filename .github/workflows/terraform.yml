@@ -1,0 +1,38 @@
+name: Terraform Workflow
+
+on:
+  push:
+    branches:
+      - s3-site
+
+jobs:
+  terraform:
+    name: Terraform Actions in Specific Folder
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: terraform/s3-site
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup Terraform
+      uses: hashicorp/setup-terraform@v2
+      with:
+        terraform_version: "1.5.0"
+
+    - name: Terraform Initialization
+      run: terraform init
+
+    - name: Terraform Plan
+      run: terraform plan
+
+    - name: Terraform Apply
+      run: terraform apply -auto-approve
+
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
