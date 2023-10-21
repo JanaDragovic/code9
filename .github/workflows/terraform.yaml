@@ -6,7 +6,7 @@ on:
       - s3-site
 jobs:
   s3-site-branch-job:
-    name: Terraform deploy from ${{githyb.ref}}
+    name: Terraform deploy from ${{github.ref}}
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/s3-site'
 
@@ -33,6 +33,6 @@ jobs:
     run: terraform apply -auto-approve
 
   env: 
-    AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID }}
+    AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
     AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
     AWS_SESSION_TOKEN: ${{sesion.AWS_SESSION_TOKEN}}
