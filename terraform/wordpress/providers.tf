@@ -12,7 +12,7 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "code9-vlada-state-file-s3-bucket"
+    bucket = "code9bucket"
     key    = "terraform/wordpress"
     region = "us-east-1"
   }
