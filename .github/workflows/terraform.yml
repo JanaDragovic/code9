@@ -7,8 +7,8 @@ on:
       - s3-site-using-module
 
 jobs:
-  terraform:
-    name: Terraform Actions in Specific Folder
+  terraform-s3-site:
+    name: Terraform Actions in Specific Folder (s3-site)
     runs-on: ubuntu-latest
 
     defaults:
@@ -38,8 +38,8 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
 
-    terraform:
-    name: Terraform Actions in Specific Folder
+  terraform-s3-site-using-module:
+    name: Terraform Actions in Specific Folder (s3-site-using-module)
     runs-on: ubuntu-latest
 
     defaults:
