@@ -8,7 +8,7 @@ on:
 
 jobs:
   terraform-s3-site:
-    name: Terraform Actions in Specific Folder (s3-site)
+    name: Terraform Actions in Specific Folder
     runs-on: ubuntu-latest
 
     defaults:
