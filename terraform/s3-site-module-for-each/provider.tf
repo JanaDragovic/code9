@@ -15,4 +15,9 @@ terraform {
       version = "~> 5.6.2"
     }
   }
+  backend "s3"{
+    bucket = "code9bucket"
+    key = "terraform/s3-site-module-for-each"
+    region = "us-east-1"
+  }
 }
