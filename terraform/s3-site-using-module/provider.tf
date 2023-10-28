@@ -15,4 +15,9 @@ terraform {
       version = "~> 5.6.2"
     }
   }
+  backend "s3" {
+    bucket = "code9-vlada-state-file-s3-bucket"
+    key    = "terraform/s3-site-using-module"
+    region = "us-east-1"
+  }
 }

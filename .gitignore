@@ -33,3 +33,4 @@ override.tf.json
 .terraformrc
 terraform.rc
 /terraform/s3-site/.terraform.lock.hcl
+/terraform/wordpress/.terraform.lock.hcl
